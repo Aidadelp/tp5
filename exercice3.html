@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Exercice 3</h1>
+
+<script>
+function luhn(n){
+  let s = n.toString().split('').reverse();
+  let sum = 0;
+
+  s.forEach(function(x,i){
+    let d = parseInt(x);
+
+    if(i % 2 === 1){
+      d = d * 2;
+      if(d > 9) d = d - 9;
+    }
+
+    sum += d;
+  });
+
+  return sum % 10 === 0;
+}
+
+let num = "4556483529563734";
+
+if(luhn(num)){
+  console.log("Valide");
+}else{
+  console.log("Non valide");
+}
+</script>
+
+</body>
+</html>
