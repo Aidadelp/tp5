@@ -4,32 +4,39 @@
 
 <h1>Exercice 3</h1>
 
+<p id="result"></p>
+
 <script>
-function luhn(n){
-  let s = n.toString().split('').reverse();
-  let sum = 0;
+function verifierLuhn(numeroCarte){
+  let chiffres = numeroCarte.toString().split('').reverse();
+  let somme = 0;
 
-  s.forEach(function(x,i){
-    let d = parseInt(x);
+  chiffres.forEach(function(item, index){
+    let chiffre = parseInt(item, 10);
 
-    if(i % 2 === 1){
-      d = d * 2;
-      if(d > 9) d = d - 9;
+    if(index % 2 === 1){
+      chiffre = chiffre * 2;
+      if(chiffre > 9){
+        chiffre = chiffre - 9;
+      }
     }
 
-    sum += d;
+    somme = somme + chiffre;
   });
 
-  return sum % 10 === 0;
+  return somme % 10 === 0;
 }
 
-let num = "4556483529563734";
+let numero = "4556483529563734";
+let output = "";
 
-if(luhn(num)){
-  console.log("Valide");
+if(verifierLuhn(numero)){
+  output = numero + " : Validé";
 }else{
-  console.log("Non valide");
+  output = numero + " : Non Validé";
 }
+
+document.getElementById("result").innerHTML = output;
 </script>
 
 </body>
