@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Exercice 2</h1>
+
+<script>
+let montant = 369;
+let billets = [200,100,50,20,10,5,2,1];
+
+billets.forEach(function(b){
+  let n = Math.floor(montant / b);
+  console.log(b + "€ : " + n);
+  montant = montant % b;
+});
+</script>
+
+</body>
+</html>
