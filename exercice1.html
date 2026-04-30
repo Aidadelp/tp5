@@ -4,21 +4,25 @@
 
 <h1>Exercice 1</h1>
 
+<p id="result"></p>
+
 <script>
-for (let A = 1; A <= 9; A++) {
-  for (let B = 1; B <= 9; B++) {
-    for (let C = 1; C <= 9; C++) {
+let output = "";
 
-      let n = A*100 + B*10 + C;
-      let s = A*A*A + B*B*B + C*C*C;
+for(let A=1; A<=9; A++){
+  for(let B=1; B<=9; B++){
+    for(let C=1; C<=9; C++){
+      let ABC = A*100 + B*10 + C;
+      let sum = A*A*A + B*B*B + C*C*C;
 
-      if (n === s) {
-        console.log(n);
+      if(ABC === sum){
+        output += ABC + "<br>";
       }
-
     }
   }
 }
+
+document.getElementById("result").innerHTML = output;
 </script>
 
 </body>
