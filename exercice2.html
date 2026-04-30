@@ -4,15 +4,20 @@
 
 <h1>Exercice 2</h1>
 
+<p id="result"></p>
+
 <script>
 let montant = 369;
-let billets = [200,100,50,20,10,5,2,1];
+let billets = [200, 100, 50, 20, 10, 5, 2, 1];
+let output = "";
 
-billets.forEach(function(b){
-  let n = Math.floor(montant / b);
-  console.log(b + "€ : " + n);
-  montant = montant % b;
+billets.forEach(function(billet){
+  let nombre = Math.floor(montant / billet);
+  output += billet + "€ : " + nombre + "<br>";
+  montant = montant % billet;
 });
+
+document.getElementById("result").innerHTML = output;
 </script>
 
 </body>
